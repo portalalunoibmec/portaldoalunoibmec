@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IBMEC - Início</title>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Ícones - Usaremos FontAwesome para facilitar -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Seção do Topo (Fundo Azul) - Abrange Saudação e Mural -->
+    <div class="top-section">
+      <!-- Cabeçalho com o nome do aluno -->
+      <header class="header">
+        <div class="container">
+          <h1>Olá, Cesar!</h1>
+          <p>Seja bem-vindo ao seu portal.</p>
+        </div>
+      </header>
+
+      <!-- Mural de Avisos (Banner) -->
+      <section class="banner container">
+        <div class="banner__card">
+          <div class="banner__title">
+            Mural de Avisos
+            <a href="#" class="banner__all">Ver todos ></a>
+          </div>
+
+          <!-- NOVO: Wrapper do carrossel do banner -->
+          <div class="banner__carousel-wrapper">
+            <!-- Trilha que fará a rolagem dos itens lado a lado -->
+            <div class="banner__carousel-track" id="banner-track">
+              <!-- Slide 1 -->
+              <div class="banner__slide">
+                <h2>Mantenha-se atualizado</h2>
+                <p>
+                  Fique por dentro das últimas novidades da IBMEC e da sua
+                  coordenação de Administração.
+                </p>
+              </div>
+              <!-- Slide 2 -->
+              <div class="banner__slide">
+                <h2>Confira sua grade</h2>
+                <p>
+                  Acesse o portal do aluno para verificar os horários e locais
+                  das suas aulas deste semestre.
+                </p>
+              </div>
+              <!-- Slide 3 -->
+              <div class="banner__slide">
+                <h2>Programa de intercâmbio</h2>
+                <p>
+                  Inscrições abertas para mobilidade internacional. Amplie seus
+                  horizontes e estude fora!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="banner__interact">
+            <button class="btn-mural">
+              <i class="fas fa-question-circle"></i> Entenda o mural
+            </button>
+            <!-- Adicionada a classe banner-pagination para o JS -->
+            <div class="pagination banner-pagination">
+              <i class="fas fa-chevron-left disabled"></i>
+              <span class="dot active" style="cursor: pointer"></span>
+              <span class="dot" style="cursor: pointer"></span>
+              <span class="dot" style="cursor: pointer"></span>
+              <i class="fas fa-chevron-right"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Fim da top-section -->
+
+    <!-- Seção de Disciplinas (Fundo Claro) -->
+    <main class="main-content">
+      <section class="disciplines container">
+        <div class="disciplines__header">
+          <h2>Disciplinas <i class="fas fa-info-circle info-icon"></i></h2>
+          <a href="#" class="see-all"
+            >Acessar todas <i class="fas fa-chevron-right"></i
+          ></a>
+        </div>
+
+        <div class="disciplines__carousel">
+          <!-- Card 1 (Destaque/Azul) -->
+          <article class="card card--featured">
+            <span class="tag">Continue de onde parou</span>
+            <div class="card__main">
+              <h3>Teorias da Administração</h3>
+              <i class="fas fa-chevron-right arrow-icon"></i>
+            </div>
+            <div class="card__footer">
+              <i class="far fa-file-alt text-icon"></i> Tema 1: História da
+              Administração
+            </div>
+          </article>
+
+          <!-- Card 2 (Cinza) -->
+          <article class="card card--secondary">
+            <span class="tag tag--secondary">Presencial</span>
+            <div class="card__main">
+              <h3>Legislação Empresarial</h3>
+            </div>
+            <div class="card__action">
+              <button class="btn-primary">Acessar disciplina</button>
+            </div>
+          </article>
+
+          <!-- Card 3 (Cinza/Parcial) -->
+          <article class="card card--secondary">
+            <span class="tag tag--secondary">Presencial</span>
+            <div class="card__main">
+              <h3>Métodos Quantitativos</h3>
+            </div>
+            <div class="card__action">
+              <button class="btn-primary">Acessar disciplina</button>
+            </div>
+          </article>
+
+          <!-- Card 4 (Cinza/Parcial) -->
+          <article class="card card--secondary">
+            <span class="tag tag--secondary">Presencial</span>
+            <div class="card__main">
+              <h3>Economia Para Negócios</h3>
+            </div>
+            <div class="card__action">
+              <button class="btn-primary">Acessar disciplina</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Paginação do Carrossel (Totalmente Dinâmica via JS) -->
+        <div class="pagination-carousel" id="dynamic-pagination">
+          <i class="fas fa-chevron-left disabled" id="prev-btn"></i>
+          <!-- As bolinhas (dots) serão injetadas automaticamente aqui pelo JavaScript -->
+          <i class="fas fa-chevron-right" id="next-btn"></i>
+        </div>
+      </section>
+    </main>
+
+    <!-- Navegação Inferior (Mobile Footer Nav) -->
+    <nav class="bottom-nav">
+      <ul>
+        <li class="active">
+          <a href="#">
+            <div class="icon-circle"><i class="fas fa-home"></i></div>
+            <span>Início</span>
+          </a>
+        </li>
+        <li>
+          <a href="financeiro.html">
+            <div class="icon-plain"><i class="fas fa-calculator"></i></div>
+            <span>Financeiro</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon-plain"><i class="fas fa-question-circle"></i></div>
+            <span>Suporte</span>
+          </a>
+        </li>
+        <li>
+          <a href="menu.html">
+            <div class="icon-plain"><i class="fas fa-bars"></i></div>
+            <span>Menu</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Barra de navegação do sistema inferior (Fake) -->
+    <div class="system-bar-bottom"></div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

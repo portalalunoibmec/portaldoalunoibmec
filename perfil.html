@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IBMEC - Perfil</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body class="finance-page">
+    <!-- Seção do Topo (Fundo Azul) -->
+    <div class="top-section perfil-top">
+      <div class="container finance-container">
+        <div class="perfil-header">
+          <a href="menu.html" class="back-button">
+            <i class="fas fa-chevron-left"></i>
+          </a>
+          <h1 class="page-title">Perfil</h1>
+        </div>
+
+        <!-- Logo Estilizado -->
+        <div class="ibmec-logo-wrapper">
+          <span class="ibmec-logo-text">ibmec</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content perfil-content">
+      <div class="container finance-container content-centered-perfil">
+        <!-- Carteirinha -->
+        <div class="id-card-wrapper">
+          <div class="id-card" id="student-card">
+            <!-- Topo: Avatar, Nome e Badge -->
+            <div class="id-card-header">
+              <!-- Substituímos a div pelas iniciais por uma tag img -->
+              <img
+                src="foto-cesar.jpeg"
+                alt="Foto 3x4 do aluno"
+                class="profile-photo"
+              />
+
+              <div class="id-name-area">
+                <h2 class="id-name">Cesar Henrique De Souza Lima</h2>
+                <span class="badge-ativo hidden" id="badge-ativo">ATIVO</span>
+              </div>
+            </div>
+
+            <!-- Linha Oculta 1: CPF e Nascimento -->
+            <div class="id-row expanded-field hidden">
+              <div class="id-field">
+                <label>CPF</label>
+                <p>420804678-32</p>
+              </div>
+              <div class="id-field">
+                <label>Nascimento</label>
+                <p>8 Jun 1993</p>
+              </div>
+            </div>
+
+            <!-- Linha Padrão: Curso -->
+            <div class="id-row">
+              <div class="id-field full-width">
+                <label>Curso</label>
+                <p>Administração</p>
+              </div>
+            </div>
+
+            <!-- Linha Oculta 2: Tipo e Modelo -->
+            <div class="id-row expanded-field hidden">
+              <div class="id-field">
+                <label>Tipo de curso</label>
+                <p>Graduação - Bacharelado</p>
+              </div>
+              <div class="id-field">
+                <label>Modelo de ensino</label>
+                <p>Presencial</p>
+              </div>
+            </div>
+
+            <!-- Linha Oculta 3: Campus -->
+            <div class="id-row expanded-field hidden">
+              <div class="id-field full-width">
+                <label>Campus</label>
+                <p>Paulista</p>
+              </div>
+            </div>
+
+            <!-- Linha Padrão (Rodapé do Card): Validade e Matrícula -->
+            <div class="id-row id-card-footer">
+              <div class="id-field">
+                <label>Validade</label>
+                <p>Dez 2026</p>
+              </div>
+              <div class="id-field">
+                <label>Matricula</label>
+                <div class="matricula-wrapper">
+                  <p>2026 0308 5611</p>
+                  <i class="far fa-copy copy-icon"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botão de Expandir/Recolher -->
+        <button class="toggle-card-btn" id="toggle-card-btn">
+          <i class="fas fa-expand-alt" id="toggle-icon"></i>
+          <span id="toggle-text">Expandir carteirinha</span>
+        </button>
+
+        <!-- Seção Minha Conta -->
+        <div class="account-section">
+          <h3 class="account-title">Minha conta</h3>
+          <div class="account-menu">
+            <a href="#" class="account-item">Meus dados</a>
+            <a href="#" class="account-item">Privacidade</a>
+            <a href="#" class="account-item">Envio de documentação</a>
+          </div>
+        </div>
+
+        <!-- Rodapé da página de perfil -->
+        <div class="perfil-footer-links">
+          <a href="index.html" class="logout-btn">Sair</a>
+          <p class="app-version">Versão do aplicativo 6.2.2</p>
+        </div>
+      </div>
+    </main>
+
+    <div class="system-bar-bottom"></div>
+
+    <!-- Script para interagir com a carteirinha -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleBtn = document.getElementById("toggle-card-btn");
+        const toggleIcon = document.getElementById("toggle-icon");
+        const toggleText = document.getElementById("toggle-text");
+        const badgeAtivo = document.getElementById("badge-ativo");
+        const expandedFields = document.querySelectorAll(".expanded-field");
+
+        let isExpanded = false;
+
+        toggleBtn.addEventListener("click", function () {
+          isExpanded = !isExpanded;
+
+          if (isExpanded) {
+            // Estado: Expandido
+            expandedFields.forEach((el) => el.classList.remove("hidden"));
+            badgeAtivo.classList.remove("hidden");
+
+            toggleText.textContent = "Recolher carteirinha";
+            toggleIcon.classList.remove("fa-expand-alt");
+            toggleIcon.classList.add("fa-compress-alt");
+          } else {
+            // Estado: Recolhido
+            expandedFields.forEach((el) => el.classList.add("hidden"));
+            badgeAtivo.classList.add("hidden");
+
+            toggleText.textContent = "Expandir carteirinha";
+            toggleIcon.classList.remove("fa-compress-alt");
+            toggleIcon.classList.add("fa-expand-alt");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

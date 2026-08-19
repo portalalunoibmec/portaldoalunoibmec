@@ -1,0 +1,1063 @@
+/* --- Variáveis de Estilo --- */
+:root {
+  --primary-color: #0d2a4a; /* Azul Escuro IBMEC */
+  --accent-color: #1a4c84; /* Azul mais claro p/ botões/hover */
+  --background-color-light: #f7f9fb;
+  --text-color-main: #333;
+  --text-color-light: #fff;
+  --card-secondary-color: #ecf1f6;
+  --tag-featured-bg: #fff;
+  --tag-featured-text: #0d2a4a;
+  --tag-secondary-bg: #4c4e51;
+  --tag-secondary-text: #fff;
+  --pagination-dot: #b1b1b1;
+  --pagination-dot-active: #0d2a4a;
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Reset Básico --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color-light); /* Fundo claro por padrão */
+  color: var(--text-color-main);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding-bottom: 70px; /* Espaço p/ nav inferior */
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  padding: 0 16px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* --- Seção do Topo (Azul) --- */
+.top-section {
+  background-color: var(--primary-color);
+  padding-top: 32px; /* Ajustado para não ficar muito espaço em branco sem a status bar */
+  padding-bottom: 24px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Cabeçalho --- */
+.header {
+  color: var(--text-color-light);
+  padding-bottom: 16px; /* Espaço até o mural */
+}
+
+.header h1 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.header p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* --- Mural de Avisos (Banner) --- */
+.banner {
+  position: relative;
+}
+
+.banner__card {
+  background-color: var(--primary-color); /* Mantém background do card */
+  border-radius: 12px;
+  padding: 16px;
+  color: var(--text-color-light);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.banner__title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.banner__all {
+  font-size: 12px;
+  color: #4b89dc;
+}
+
+.banner__content h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.banner__content p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: 0.9;
+  margin-bottom: 16px;
+}
+
+.banner__interact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-mural {
+  background: none;
+  color: #4b89dc;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.pagination .dot {
+  width: 6px;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+}
+
+.pagination .dot.active {
+  background-color: #fff;
+  width: 14px; /* Barra maior p/ ativo */
+  border-radius: 10px;
+}
+
+.pagination .disabled {
+  opacity: 0.3;
+}
+
+/* --- Conteúdo Principal (Claro) --- */
+.main-content {
+  background-color: var(--background-color-light);
+}
+
+/* --- Seção de Disciplinas --- */
+.disciplines {
+  margin-top: 24px;
+}
+
+.disciplines__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.disciplines__header h2 {
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.info-icon {
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.see-all {
+  font-size: 12px;
+  color: var(--accent-color);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* --- Carrossel e Cards --- */
+.disciplines__carousel {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+  scrollbar-width: none; /* Esconder scrollbar no Firefox */
+}
+
+.disciplines__carousel::-webkit-scrollbar {
+  display: none; /* Esconder scrollbar no Chrome/Safari */
+}
+
+.card {
+  flex: 0 0 85%; /* Largura do card no mobile */
+  scroll-snap-align: center;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 160px;
+  transition: transform 0.3s ease;
+}
+
+.card--featured {
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+}
+
+.card--secondary {
+  background-color: var(--card-secondary-color);
+  color: var(--text-color-main);
+}
+
+.card--secondary h3 {
+  font-size: 16px;
+}
+
+.tag {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.card--featured .tag {
+  background-color: var(--tag-featured-bg);
+  color: var(--tag-featured-text);
+}
+
+.tag--secondary {
+  background-color: var(--tag-secondary-bg);
+  color: var(--tag-secondary-text);
+}
+
+.card__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 12px 0;
+}
+
+.card__main h3 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.arrow-icon {
+  font-size: 14px;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+.card__footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.text-icon {
+  font-size: 14px;
+}
+
+.card__action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  font-size: 12px;
+  padding: 8px 16px;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color);
+}
+
+/* --- Paginação do Carrossel (Dinâmica via JS) --- */
+.pagination-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #4c4e51;
+}
+
+.pagination-carousel .dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--pagination-dot);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.pagination-carousel .dot.active {
+  background-color: var(--pagination-dot-active);
+  width: 16px;
+  border-radius: 10px;
+}
+
+.pagination-carousel .disabled {
+  opacity: 0.3;
+}
+
+/* --- Navegação Inferior --- */
+.bottom-nav {
+  position: fixed;
+  bottom: 12px; /* Espaço p/ system bar */
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  border-top: 1px solid #eaeaea;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  padding: 0 16px;
+}
+
+.bottom-nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.bottom-nav li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+}
+
+.bottom-nav .icon-circle {
+  width: 32px;
+  height: 32px;
+  background-color: var(--card-secondary-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #555;
+  font-size: 16px;
+}
+
+.bottom-nav .icon-plain {
+  font-size: 18px;
+  color: #888;
+}
+
+.bottom-nav li.active a {
+  color: var(--primary-color);
+}
+
+.bottom-nav li.active .icon-circle {
+  background-color: var(--card-secondary-color);
+  color: var(--primary-color);
+}
+
+/* --- System Bar Bottom --- */
+.system-bar-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background-color: #fff;
+  z-index: 1001;
+}
+
+/* --- Lógica visual do Carrossel do Mural (Rolagem) --- */
+.banner__carousel-wrapper {
+  overflow: hidden; /* Esconde os slides que estão fora da caixa principal */
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.banner__carousel-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.4s ease-in-out; /* Define o tempo e o estilo da rolagem */
+}
+
+.banner__slide {
+  flex: 0 0 100%; /* Força cada slide a ter exatamente 100% da largura do card */
+  min-width: 100%;
+}
+
+.banner__slide h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.banner__slide p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+/* =========================================
+   ESTILOS ESPECÍFICOS - PERFIL E CARTEIRINHA
+   ========================================= */
+
+.perfil-top {
+  background-color: var(--primary-color);
+  padding-top: 32px;
+  padding-bottom: 60px; /* Espaço para a carteirinha sobrepor */
+  border-radius: 0;
+}
+
+.perfil-header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.ibmec-logo-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.ibmec-logo-text {
+  font-family:
+    "Times New Roman", Times, serif; /* Fonte serifada para imitar o logo */
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: -1px;
+}
+
+.perfil-content {
+  background-color: var(--background-color-light);
+  margin-top: -50px; /* Puxa o conteúdo para cima do fundo azul */
+  padding-bottom: 40px;
+}
+
+.content-centered-perfil {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container da Carteirinha */
+.id-card-wrapper {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.id-card {
+  background: linear-gradient(
+    145deg,
+    #021a30,
+    #042e55
+  ); /* Degradê azul escuro */
+  border: 3px solid #ced6df; /* Borda grossa clara */
+  border-radius: 16px;
+  padding: 24px;
+  color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Linhas e Grids da Carteirinha */
+.id-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.id-avatar {
+  width: 56px;
+  height: 56px;
+  font-size: 20px;
+}
+
+.id-name-area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.id-name {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Badge Verde de "ATIVO" */
+.badge-ativo {
+  background-color: #35a815; /* Verde IBMEC */
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+/* Campos de dados */
+.id-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.id-row:last-child {
+  margin-bottom: 0;
+}
+
+.id-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.id-field.full-width {
+  flex: 100%;
+}
+
+.id-field label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #8da4b8; /* Azul claro / cinza para os rótulos */
+}
+
+.id-field p {
+  font-size: 15px;
+  font-weight: 400;
+  color: #fff;
+}
+
+/* Agrupamento da matrícula com ícone de copiar */
+.matricula-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.copy-icon {
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+/* Utilitário para ocultar campos quando recolhida */
+.hidden {
+  display: none !important;
+}
+
+/* Botão de Expandir/Recolher */
+.toggle-card-btn {
+  background: transparent;
+  color: var(--accent-color);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 auto 32px auto;
+  font-weight: 500;
+}
+
+/* Seção Minha Conta */
+.account-section {
+  margin-bottom: 40px;
+}
+
+.account-title {
+  font-size: 18px;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.account-menu {
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.account-item {
+  padding: 16px;
+  font-size: 15px;
+  color: #333;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.account-item:last-child {
+  border-bottom: none;
+}
+
+/* Rodapé (Sair e Versão) */
+.perfil-footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.logout-btn {
+  color: var(--accent-color);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.app-version {
+  font-size: 13px;
+  color: #888;
+}
+
+/* =========================================
+   ESTILOS ESPECÍFICOS - MENSALIDADES
+   ========================================= */
+
+.mensalidades-top {
+  background-color: var(--primary-color);
+  padding-top: 24px;
+  padding-bottom: 0; /* O fundo azul acaba reto com os meses */
+  border-radius: 0;
+}
+
+.mensalidades-header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.back-button {
+  position: absolute;
+  left: 0;
+  color: #fff;
+  font-size: 18px;
+  padding: 8px 16px 8px 0;
+}
+
+.page-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.mensalidades-year {
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+
+/* Navegação horizontal de meses */
+.months-nav {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding-bottom: 0;
+  scrollbar-width: none; /* Firefox */
+}
+
+.months-nav::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.month-item {
+  color: #fff;
+  font-size: 15px;
+  padding-bottom: 12px;
+  white-space: nowrap;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.month-item.active {
+  font-weight: 600;
+  border-bottom: 2px solid #fff;
+  opacity: 1;
+}
+
+/* Conteúdo da tela de mensalidades */
+.mensalidades-content {
+  background-color: var(--background-color-light);
+  padding-top: 40px;
+  min-height: calc(100vh - 180px); /* Preenche a tela toda */
+}
+
+.content-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Pílula de Status Verde */
+.status-pill {
+  background-color: #217346; /* Verde similar ao da imagem */
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+
+.mensalidade-value {
+  font-size: 40px;
+  font-weight: 400;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.due-date {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 32px;
+}
+
+.divider-line {
+  width: 90%;
+  max-width: 400px;
+  height: 1px;
+  background-color: #e0e0e0;
+  border: none;
+  margin-bottom: 24px;
+}
+
+.update-info {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+.action-link {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+/* =========================================
+   ESTILOS ESPECÍFICOS - TELA FINANCEIRO
+   ========================================= */
+
+/* Limite para o conteúdo no notebook */
+.finance-container {
+  max-width: 700px;
+  margin: 10px auto;
+}
+
+/* Fundo da tela caso a tela do PC seja alta */
+.finance-page {
+  background-color: var(--background-color-light);
+}
+
+.finance-top {
+  background-color: var(--primary-color);
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.finance-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.finance-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-texts h1 {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 4px;
+  color: #fff;
+}
+
+.user-texts p {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+  background-color: #121212;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  margin-top: 32px;
+}
+
+.finance-content {
+  margin-top: -30px;
+  padding-bottom: 90px;
+}
+
+/* Sistema de colunas (Grid) */
+.finance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+/* Quadrados Brancos Idênticos à Imagem */
+.finance-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.icon-card {
+  font-size: 22px;
+  color: #111;
+}
+
+.finance-card h3 {
+  font-size: 15px;
+  font-weight: 400;
+  color: #333;
+  line-height: 1.3;
+}
+
+/* =========================================
+   ESTILOS EXCLUSIVOS DA PÁGINA DE MENU
+========================================= */
+
+.menu-top {
+  padding-top: 32px;
+  padding-bottom: 24px;
+}
+
+.menu-header {
+  text-align: center;
+  padding-bottom: 24px;
+}
+
+.menu-header h1 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* --- Barra de Pesquisa --- */
+.search-container {
+  padding: 0 16px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: var(--text-color-main);
+  font-family: inherit;
+}
+
+.search-bar input::placeholder {
+  color: #555;
+}
+
+.search-bar i {
+  color: #555;
+  font-size: 16px;
+  margin-left: 8px;
+}
+
+/* --- Corpo do Menu --- */
+.menu-main {
+  padding-top: 24px;
+}
+
+.menu-section {
+  margin-bottom: 32px;
+}
+
+.menu-section__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 0 4px;
+}
+
+.menu-section__header h2 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.menu-section__header i {
+  font-size: 14px;
+  color: var(--text-color-main);
+}
+
+/* --- Grid de Botões (3 colunas) --- */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.menu-card {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  padding: 18px 8px; /* Ajuste no padding interno */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.menu-card:active {
+  transform: scale(0.97);
+  box-shadow: none;
+}
+
+/* --- Ícones Bootstrap Estilizados --- */
+.menu-icon {
+  font-size: 26px; /* Tamanho dos ícones */
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+/* Cores baseadas na imagem de referência */
+.c-yellow {
+  color: #f4c150;
+}
+.c-blue {
+  color: #4385f5;
+}
+.c-lightblue {
+  color: #4bc0c0;
+}
+.c-orange {
+  color: #f28b30;
+}
+.c-green {
+  color: #34a853;
+}
+.c-green-light {
+  color: #8ec371;
+}
+.c-red {
+  color: #e94b3c;
+}
+
+.menu-text {
+  font-size: 11px;
+  line-height: 1.3;
+  font-weight: 500;
+  color: var(--text-color-main);
+}
+
+/* --- Badge de Notificação --- */
+.notification-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.notification-wrapper .badge {
+  position: absolute;
+  top: -2px;
+  right: -8px;
+  background-color: #d1d5db; /* Cor cinza clarinho da imagem */
+  color: #4b5563; /* Texto escuro */
+  font-size: 10px;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+/* --- Estilos para a foto 3x4 da carteirinha --- */
+.profile-photo {
+  width: 60px; /* Largura da foto */
+  height: 80px; /* Altura mantendo a proporção 3x4 */
+  object-fit: cover; /* Faz com que a imagem preencha o espaço sem achatar */
+  border-radius: 6px; /* Quebra um pouco as pontas para ficar mais moderno */
+  margin-right: 16px; /* Espaço entre a foto e os textos ao lado */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil para dar acabamento */
+  background-color: #f7f9fb; /* Fundo caso a imagem demore a carregar */
+}

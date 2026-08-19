@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu - IBMEC Clone</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- FontAwesome para a barra inferior e navegação padrão -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Bootstrap Icons para os ícones do menu -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <!-- Seção do Topo (Fundo Azul) -->
+    <div class="top-section menu-top">
+      <header class="header menu-header">
+        <h1>Menu</h1>
+      </header>
+
+      <!-- Barra de pesquisa -->
+      <div class="search-container container">
+        <div class="search-bar">
+          <input type="text" placeholder="Pesquise por um atalho" />
+          <i class="fas fa-search"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content menu-main">
+      <!-- Categoria: Perfil -->
+      <section class="menu-section container">
+        <div class="menu-section__header">
+          <h2>Perfil</h2>
+          <i class="fas fa-arrow-right"></i>
+        </div>
+
+        <div class="menu-grid">
+          <a href="perfil.html" class="menu-card">
+            <i class="bi bi-star-fill menu-icon c-yellow"></i>
+            <span class="menu-text">Carteirinha</span>
+          </a>
+          <a href="#" class="menu-card">
+            <i class="bi bi-person-fill menu-icon c-blue"></i>
+            <span class="menu-text">Meus dados</span>
+          </a>
+          <a href="#" class="menu-card">
+            <i class="bi bi-shield-lock-fill menu-icon c-lightblue"></i>
+            <span class="menu-text">Política de<br />privacidade</span>
+          </a>
+          <a href="#" class="menu-card">
+            <i class="bi bi-folder-fill menu-icon c-blue"></i>
+            <span class="menu-text">Envio de<br />documentação</span>
+          </a>
+          <a href="#" class="menu-card">
+            <div class="notification-wrapper">
+              <i class="bi bi-bell-fill menu-icon c-orange"></i>
+              <span class="badge">1</span>
+            </div>
+            <span class="menu-text">Notificações</span>
+          </a>
+          <a href="#" class="menu-card">
+            <i class="bi bi-check-square-fill menu-icon c-green"></i>
+            <span class="menu-text">Check-in</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Categoria: Meu curso -->
+      <section class="menu-section container">
+        <div class="menu-section__header">
+          <h2>Meu curso</h2>
+          <i class="fas fa-arrow-right"></i>
+        </div>
+
+        <div class="menu-grid">
+          <a href="#" class="menu-card">
+            <i class="bi bi-check2-square menu-icon c-green-light"></i>
+            <span class="menu-text">Progresso no<br />período</span>
+          </a>
+          <a href="#" class="menu-card">
+            <i class="bi bi-grid-1x2-fill menu-icon c-lightblue"></i>
+            <span class="menu-text">Disciplinas e<br />avaliações</span>
+          </a>
+          <a href="#" class="menu-card">
+            <i class="bi bi-geo-alt-fill menu-icon c-blue"></i>
+            <span class="menu-text">Avaliações<br />digitais</span>
+          </a>
+          <a href="#" class="menu-card">
+            <i class="bi bi-file-earmark-check-fill menu-icon c-green"></i>
+            <span class="menu-text">Notas e<br />histórico</span>
+          </a>
+          <a href="#" class="menu-card">
+            <i class="bi bi-hourglass-split menu-icon c-blue"></i>
+            <span class="menu-text">Horas AAC</span>
+          </a>
+          <a href="#" class="menu-card">
+            <i class="bi bi-award-fill menu-icon c-yellow"></i>
+            <span class="menu-text">Certificações</span>
+          </a>
+          <a href="#" class="menu-card">
+            <i class="bi bi-calendar-date-fill menu-icon c-red"></i>
+            <span class="menu-text">Calendário<br />acadêmico</span>
+          </a>
+          <a href="#" class="menu-card">
+            <i class="bi bi-calendar-check-fill menu-icon c-red"></i>
+            <span class="menu-text">Lembrete de<br />estudo</span>
+          </a>
+          <a href="#" class="menu-card">
+            <i class="bi bi-bar-chart-fill menu-icon c-orange"></i>
+            <span class="menu-text">Estatísticas</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Navegação Inferior -->
+    <nav class="bottom-nav">
+      <ul>
+        <li>
+          <a href="index.html">
+            <!-- Volta ao início -->
+            <div class="icon-plain"><i class="fas fa-home"></i></div>
+            <span>Início</span>
+          </a>
+        </li>
+        <li>
+          <a href="financeiro.html">
+            <div class="icon-plain"><i class="fas fa-calculator"></i></div>
+            <span>Financeiro</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon-plain"><i class="fas fa-question-circle"></i></div>
+            <span>Suporte</span>
+          </a>
+        </li>
+        <li class="active">
+          <a href="#">
+            <div class="icon-circle"><i class="fas fa-bars"></i></div>
+            <span>Menu</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Barra de navegação do sistema inferior (Fake) -->
+    <div class="system-bar-bottom"></div>
+  </body>
+</html>

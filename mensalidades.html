@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clonagem IBMEC - Minhas Mensalidades</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body class="finance-page">
+    <!-- Seção do Topo (Fundo Azul) -->
+    <div class="top-section mensalidades-top">
+      <div class="container finance-container">
+        <!-- Linha 1: Botão Voltar e Título -->
+        <div class="mensalidades-header">
+          <a href="financeiro.html" class="back-button">
+            <i class="fas fa-chevron-left"></i>
+          </a>
+          <h1 class="page-title">Minhas mensalidades</h1>
+        </div>
+
+        <!-- Linha 2: Ano -->
+        <div class="mensalidades-year">2026</div>
+
+        <!-- Linha 3: Meses a partir de Fevereiro -->
+        <div class="months-nav">
+          <span class="month-item">Fevereiro</span>
+          <span class="month-item">Março</span>
+          <span class="month-item">Abril</span>
+          <span class="month-item">Maio</span>
+          <span class="month-item">Junho</span>
+          <span class="month-item active">Julho</span>
+          <span class="month-item">Agosto</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content mensalidades-content">
+      <div class="container finance-container content-centered">
+        <!-- Status Pill (Verde) -->
+        <div class="status-pill">Mensalidade paga</div>
+
+        <!-- Valor Solicitado -->
+        <h2 class="mensalidade-value">R$ 3.200,00</h2>
+
+        <!-- Data de Vencimento -->
+        <p class="due-date">Vencimento em 10/Ago</p>
+
+        <!-- Linha Divisória -->
+        <hr class="divider-line" />
+
+        <!-- Informações de Atualização -->
+        <p class="update-info">Informações financeiras atualizadas<br /></p>
+
+        <!-- Link de Ação -->
+        <a href="#" class="action-link">Consultar detalhes da mensalidade</a>
+      </div>
+    </main>
+
+    <div class="system-bar-bottom"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const months = document.querySelectorAll(".month-item");
+        const dueDateText = document.querySelector(".due-date");
+
+        // Dicionário com as abreviações corretas dos meses
+        const abrevMeses = {
+          Fevereiro: "Fev",
+          Março: "Mar",
+          Abril: "Abr",
+          Maio: "Mai",
+          Junho: "Jun",
+          Julho: "Jul",
+          Agosto: "Ago",
+        };
+
+        months.forEach((month) => {
+          month.addEventListener("click", function () {
+            // 1. Remove a marcação branca de todos e coloca só no clicado
+            months.forEach((m) => m.classList.remove("active"));
+            this.classList.add("active");
+
+            // 2. Pega o nome do mês clicado
+            const nomeMes = this.textContent.trim();
+
+            // 3. Busca a abreviação no dicionário (ex: "Julho" vira "Jul")
+            const mesAbreviado = abrevMeses[nomeMes];
+
+            // 4. Atualiza o texto de vencimento na tela
+            dueDateText.textContent = `Vencimento em 10/${mesAbreviado}`;
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
